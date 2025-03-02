@@ -3,7 +3,10 @@ import Home from './pages/Home';
 import Root from './pages/Root';
 import ErrorPage from './pages/ErrorPage';
 import Events, { loader as eventsLoader } from './pages/Events';
-import EventDetails, { loader as eventDetailLoader } from './pages/EventDetails';
+import EventDetails, {
+  loader as eventDetailLoader,
+  action as deleteEventAction
+} from './pages/EventDetails';
 import NewEvent, { action as actionNew } from './pages/NewEvent';
 import EditEvent from './pages/EditEvent';
 import EventsRoot from './pages/EventsRoot';
@@ -52,6 +55,7 @@ function App() {
                 {
                   index: true,
                   element: <EventDetails />,
+                  action: deleteEventAction
                 },
                 {
                   path: 'edit',
