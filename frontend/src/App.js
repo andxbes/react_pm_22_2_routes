@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Root from './pages/Root';
 import ErrorPage from './pages/ErrorPage';
 import Events, { loader as eventsLoader } from './pages/Events';
-import EventDetails from './pages/EventDetails';
+import EventDetails, { loader as eventDetail } from './pages/EventDetails';
 import NewEvent from './pages/NewEvent';
 import EditEvent from './pages/EditEvent';
 import EventsRoot from './pages/EventsRoot';
@@ -40,7 +40,7 @@ function App() {
         {
           path: 'events/', element: <EventsRoot />, children: [
             { index: true, element: <Events />, loader: eventsLoader },
-            { path: ':eventId', element: <EventDetails /> },
+            { path: ':eventId', element: <EventDetails />, loader: eventDetail },
             { path: 'new', element: <NewEvent /> },
             { path: ':eventId/edit', element: <EditEvent /> },
           ]
