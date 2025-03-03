@@ -1,5 +1,7 @@
+import PageContent from "../components/PageContent";
+
 export default function Home(params) {
-    return <>
-        <h1>My home page</h1>
-    </>;
+    return <PageContent title='My home page'>
+        <p>Main page</p>
+    </PageContent>;
 };

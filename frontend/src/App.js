@@ -11,6 +11,7 @@ import NewEvent from './pages/NewEvent';
 import EditEvent from './pages/EditEvent';
 import EventsRoot from './pages/EventsRoot';
 import { action as manipulateEventAction } from './components/EventForm';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 // Challenge / Exercise
 
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
@@ -65,8 +66,18 @@ function App() {
                 },
               ]
             },
-            { path: 'new', element: <NewEvent />, action: manipulateEventAction },
+            {
+              path: 'new',
+              element: <NewEvent />,
+              action: manipulateEventAction
+            },
           ]
+
+        },
+        {
+          path: 'newsletter',
+          element: <NewsletterPage />,
+          action: newsletterAction,
         },
 
       ],
