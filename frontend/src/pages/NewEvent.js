@@ -28,6 +28,10 @@ export async function action({ request, params }) {
         body: JSON.stringify(formObject)
     });
 
+    if (response.status === 422) {
+        return response;
+    }
+
 
     if (!response.ok) {
         const error = new Error('Could not save event.');
